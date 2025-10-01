@@ -1,0 +1,17 @@
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\bin\Debug\UserManagement.exe.config
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\bin\Debug\UserManagement.exe
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\bin\Debug\UserManagement.pdb
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\bin\Debug\Guna.UI2.dll
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.csproj.AssemblyReference.cache
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.Home.resources
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.Properties.Resources.resources
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.csproj.GenerateResource.cache
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.csproj.CoreCompileInputs.cache
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserMana.582A6DE7.Up2Date
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.exe
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.pdb
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.UserUS.resources
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.SalaryManagement.resources
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.View.Account.AccountManagement.resources
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.View.Salary.SalaryDetailForUser.resources
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.View.User.CUDUser.resources

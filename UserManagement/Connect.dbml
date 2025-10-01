@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="UserManager" Class="ConnectDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=UserManager;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="UserManagement.Properties.Settings" SettingsPropertyName="UserManagerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Account" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="account_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password_hash" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="User_Account" Member="User" ThisKey="user_id" OtherKey="user_id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AllowanceAndPenalty" Member="AllowanceAndPenalties">
+    <Type Name="AllowanceAndPenalty">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="month" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="reason" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="type" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="User_AllowanceAndPenalty" Member="User" ThisKey="user_id" OtherKey="user_id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Attendance" Member="Attendances">
+    <Type Name="Attendance">
+      <Column Name="attendance_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="work_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="check_in" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="check_out" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="hours_worked" Type="System.Decimal" DbType="Decimal(17,6)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="shift_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Shift_Attendance" Member="Shift" ThisKey="shift_id" OtherKey="shift_id" Type="Shift" IsForeignKey="true" />
+      <Association Name="User_Attendance" Member="User" ThisKey="user_id" OtherKey="user_id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProcessErrorLog" Member="ProcessErrorLogs">
+    <Type Name="ProcessErrorLog">
+      <Column Name="log_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="process_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="err_msg" Type="System.String" DbType="NVarChar(4000) NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Roles">
+    <Type Name="Role">
+      <Column Name="role_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="role_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="salary" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Role_User" Member="Users" ThisKey="role_id" OtherKey="role_id" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Salary" Member="Salaries">
+    <Type Name="Salary">
+      <Column Name="salary_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="month" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="total_hours" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="total_Bonus" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="total_Penalty" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="final_salary" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="User_Salary" Member="User" ThisKey="user_id" OtherKey="user_id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Shift" Member="Shifts">
+    <Type Name="Shift">
+      <Column Name="shift_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="shift_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="start_time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="end_time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Association Name="Shift_Attendance" Member="Attendances" ThisKey="shift_id" OtherKey="shift_id" Type="Attendance" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="full_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dob" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="role_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hire_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="User_Account" Member="Accounts" ThisKey="user_id" OtherKey="user_id" Type="Account" />
+      <Association Name="User_AllowanceAndPenalty" Member="AllowanceAndPenalties" ThisKey="user_id" OtherKey="user_id" Type="AllowanceAndPenalty" />
+      <Association Name="User_Attendance" Member="Attendances" ThisKey="user_id" OtherKey="user_id" Type="Attendance" />
+      <Association Name="User_Salary" Member="Salaries" ThisKey="user_id" OtherKey="user_id" Type="Salary" />
+      <Association Name="Role_User" Member="Role" ThisKey="role_id" OtherKey="role_id" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_AttendanceDetail" Member="v_AttendanceDetails">
+    <Type Name="v_AttendanceDetail">
+      <Column Name="attendance_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="full_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="role_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="check_in" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="check_out" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="hours_worked" Type="System.Decimal" DbType="Decimal(17,6)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_SalaryDetailForMonth" Member="v_SalaryDetailForMonths">
+    <Type Name="v_SalaryDetailForMonth">
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="full_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dob" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="role_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="month" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="total_hours" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="total_Bonus" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="total_Penalty" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="final_salary" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_SalaryMonthDetail" Member="v_SalaryMonthDetails">
+    <Type Name="v_SalaryMonthDetail">
+      <Column Name="salary_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="full_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="role_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="month" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="total_hours" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="total_Bonus" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="total_Penalty" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="final_salary" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_UserWithRole" Member="v_UserWithRoles">
+    <Type Name="v_UserWithRole">
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="full_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dob" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="hire_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="role_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SearchUser" Method="SearchUser">
+    <Parameter Name="TypeSearch" Parameter="typeSearch" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ValueSearch" Parameter="valueSearch" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="SearchUserResult">
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="full_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dob" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="hire_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="role_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_AddUserManagement" Method="sp_AddUserManagement">
+    <Parameter Name="FullName" Parameter="fullName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="dob" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="phone" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="RoleId" Parameter="roleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HireDate" Parameter="hireDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Gender" Parameter="gender" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_MergeUserManagement" Method="sp_MergeUserManagement">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FullName" Parameter="fullName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="dob" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="phone" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="RoleId" Parameter="roleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HireDate" Parameter="hireDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Gender" Parameter="gender" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateUserManagement" Method="sp_UpdateUserManagement">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FullName" Parameter="fullName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="dob" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="phone" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="RoleId" Parameter="roleId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HireDate" Parameter="hireDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Gender" Parameter="gender" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DisableUserById" Method="DisableUserById">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateSalaryForUser" Method="sp_UpdateSalaryForUser">
+    <Parameter Name="user_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateSalaryForAllUsers" Method="sp_UpdateSalaryForAllUsers">
+    <Parameter Name="month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.fn_GetSalaryDetailForMonth" Method="fn_GetSalaryDetailForMonth" IsComposable="true">
+    <Parameter Name="month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <ElementType Name="fn_GetSalaryDetailForMonthResult">
+      <Column Name="salary_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="full_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="role_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="month" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="total_hours" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="total_Bonus" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="total_Penalty" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="final_salary" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.fn_GetAttendanceByUser" Method="fn_GetAttendanceByUser" IsComposable="true">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Month" Parameter="month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Year" Parameter="year" Type="System.Int32" DbType="Int" />
+    <ElementType Name="fn_GetAttendanceByUserResult">
+      <Column Name="attendance_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="work_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="check_in" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="check_out" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="hours_worked" Type="System.Decimal" DbType="Decimal(17,6)" CanBeNull="true" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="shift_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.fn_GetAllowanceByUserForMonth" Method="fn_GetAllowanceByUserForMonth" IsComposable="true">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Month" Parameter="month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Year" Parameter="year" Type="System.Int32" DbType="Int" />
+    <ElementType Name="fn_GetAllowanceByUserForMonthResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="month" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="reason" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="type" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.fn_GetPenaltyByUserForMonth" Method="fn_GetPenaltyByUserForMonth" IsComposable="true">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Month" Parameter="month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Year" Parameter="year" Type="System.Int32" DbType="Int" />
+    <ElementType Name="fn_GetPenaltyByUserForMonthResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="month" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="reason" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="type" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
