@@ -122,7 +122,7 @@
         <elementListCompartment Id="bff7c3da-0606-40ca-a546-c9dca30da7cb" absoluteBounds="4.3900000000000006, 8.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.0625 : 6.10740397135417); (5.0625 : 8.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.0625 : 6.10740397135417); (5.0625 : 8.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ConnectDataContext/User/User_SalaryPayment" />
       <nodes>
         <classShapeMoniker Id="8a576da6-322b-4760-81e6-b29b24d95f9f" />

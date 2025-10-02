@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using UserManagement.DAO;
 using UserManagement.Entity;
 
 namespace UserManagement.DTO
@@ -12,6 +13,12 @@ namespace UserManagement.DTO
     {
         ConnectDataContext hihi = new ConnectDataContext();
 
+        // Tạo một phương thức private để lấy DataContext mới một cách nhanh chóng
+        private ConnectDataContext GetContext()
+        {
+            // Luôn tạo mới DataContext với chuỗi kết nối của người dùng đang đăng nhập
+            return new ConnectDataContext(UserSession.MainConnectionString);
+        }
 
         private static UserDAO instance;
         public static UserDAO Instance
@@ -31,7 +38,7 @@ namespace UserManagement.DTO
 
         public List<UserWithRole> GetListUser()
         {
-            using (var db = new ConnectDataContext()) {
+            using (var db = GetContext()) {
                 return db.v_UserWithRoles.Select(v => new UserWithRole
                 {
                     user_id = v.user_id,
@@ -51,7 +58,7 @@ namespace UserManagement.DTO
         // viet ham lay danh sach user theo role_id
         public List<UserWithRole> GetListUserByRoleName(String name)
         {
-            using (var conn = new ConnectDataContext())
+            using (var conn = GetContext())
             {
                 return conn.v_UserWithRoles.
                     Where(v => v.role_name == name).
@@ -72,7 +79,7 @@ namespace UserManagement.DTO
         // Tim kiem user theo key va value
         public List<UserWithRole> GetListUserByKey(String key, String value)
         {
-            using (var conn = new ConnectDataContext())
+            using (var conn = GetContext())
             {
                 var result = conn.fn_SearchUser(key, value);
                 return result.
@@ -94,7 +101,7 @@ namespace UserManagement.DTO
         // viet ham them user 
         public void InsertUser(UserEntity user, string username, string password, string securityRoleName)
         {
-            using (var conn = new ConnectDataContext())
+            using (var conn = GetContext())
             {
                 if (user.user_id == null || user.user_id == -1)
                 {
@@ -134,7 +141,7 @@ namespace UserManagement.DTO
         // viet ham lay user theo id
         public UserEntity GetUserById(int id)
         {
-            using (var conn = new ConnectDataContext())
+            using (var conn = GetContext())
             {
                 var dbUser = conn.Users.FirstOrDefault(u => u.user_id == id);
                 if (dbUser == null)
@@ -162,7 +169,7 @@ namespace UserManagement.DTO
         // viet ham xoa user theo id
         public void DeleteUser(int id)
         {
-            using (var conn = new ConnectDataContext())
+            using (var conn = GetContext())
             {
                 conn.DisableUserById(id);
             }
@@ -173,7 +180,7 @@ namespace UserManagement.DTO
         /// </summary>
         public List<UserCountByRole> GetUserCountByRoleName()
         {
-            using (var conn = new ConnectDataContext())
+            using (var conn = GetContext())
             {
                 var result = conn.fn_GetUserCountByRoleName();
                 return result.Select(x => new UserCountByRole

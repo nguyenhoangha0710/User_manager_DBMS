@@ -3,11 +3,39 @@
   "WorkspaceRootPath": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|d:\\nguyenhoangha_nam3\\hk1_d1\\dbms\\document\\project\\usermanagement\\usermanagement\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|d:\\nguyenhoangha_nam3\\hk1_d1\\dbms\\document\\project\\usermanagement\\usermanagement\\view\\login\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\view\\login\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|d:\\nguyenhoangha_nam3\\hk1_d1\\dbms\\document\\project\\usermanagement\\usermanagement\\view\\login\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\view\\login\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|d:\\nguyenhoangha_nam3\\hk1_d1\\dbms\\document\\project\\usermanagement\\usermanagement\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\usermanagement\\connect.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
+      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\connect.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|d:\\nguyenhoangha_nam3\\hk1_d1\\dbms\\document\\project\\usermanagement\\usermanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|d:\\nguyenhoangha_nam3\\hk1_d1\\dbms\\document\\project\\usermanagement\\usermanagement\\dao\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\dao\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|d:\\nguyenhoangha_nam3\\hk1_d1\\dbms\\document\\project\\usermanagement\\usermanagement\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|d:\\nguyenhoangha_nam3\\hk1_d1\\dbms\\document\\project\\usermanagement\\usermanagement\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\usermanagement\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -15,15 +43,11 @@
       "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\entity\\allowanceandpenaltyentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|d:\\nguyenhoangha_nam3\\hk1_d1\\dbms\\document\\project\\usermanagement\\usermanagement\\view\\salary\\salarydetailforuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\usermanagement\\view\\salary\\salarydetailforuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\view\\salary\\salarydetailforuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\usermanagement\\connect.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
-      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\connect.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|d:\\nguyenhoangha_nam3\\hk1_d1\\dbms\\document\\project\\usermanagement\\usermanagement\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\usermanagement\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -50,33 +74,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserControl1.cs",
-              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\UserControl1.cs",
-              "RelativeDocumentMoniker": "UserManagement\\UserControl1.cs",
-              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\UserControl1.cs",
-              "RelativeToolTip": "UserManagement\\UserControl1.cs",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAAAJwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T05:15:07.758Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserControl1.cs [Design]",
-              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\UserControl1.cs",
-              "RelativeDocumentMoniker": "UserManagement\\UserControl1.cs",
-              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\UserControl1.cs [Design]",
-              "RelativeToolTip": "UserManagement\\UserControl1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T05:04:59.441Z",
-              "EditorCaption": " [Design]"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -91,7 +90,121 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\View\\Login\\LoginForm.cs",
+              "RelativeDocumentMoniker": "UserManagement\\View\\Login\\LoginForm.cs",
+              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\View\\Login\\LoginForm.cs",
+              "RelativeToolTip": "UserManagement\\View\\Login\\LoginForm.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAuwCUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T14:47:43.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\View\\Login\\LoginForm.cs",
+              "RelativeDocumentMoniker": "UserManagement\\View\\Login\\LoginForm.cs",
+              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\View\\Login\\LoginForm.cs [Design]",
+              "RelativeToolTip": "UserManagement\\View\\Login\\LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T14:47:36.728Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserSession.cs",
+              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\DAO\\UserSession.cs",
+              "RelativeDocumentMoniker": "UserManagement\\DAO\\UserSession.cs",
+              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\DAO\\UserSession.cs",
+              "RelativeToolTip": "UserManagement\\DAO\\UserSession.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T14:46:50.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.config",
+              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\App.config",
+              "RelativeDocumentMoniker": "UserManagement\\App.config",
+              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\App.config",
+              "RelativeToolTip": "UserManagement\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-10-02T14:44:18.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserDAO.cs",
+              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\DAO\\UserDAO.cs",
+              "RelativeDocumentMoniker": "UserManagement\\DAO\\UserDAO.cs",
+              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\DAO\\UserDAO.cs",
+              "RelativeToolTip": "UserManagement\\DAO\\UserDAO.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAswJEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T14:49:09.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Connect.dbml",
+              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Connect.dbml",
+              "RelativeDocumentMoniker": "UserManagement\\Connect.dbml",
+              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Connect.dbml",
+              "RelativeToolTip": "UserManagement\\Connect.dbml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
+              "WhenOpened": "2025-09-19T05:39:59.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Program.cs",
+              "RelativeDocumentMoniker": "UserManagement\\Program.cs",
+              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Program.cs",
+              "RelativeToolTip": "UserManagement\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T14:56:43.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserControl1.cs",
+              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\UserControl1.cs",
+              "RelativeDocumentMoniker": "UserManagement\\UserControl1.cs",
+              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\UserControl1.cs",
+              "RelativeToolTip": "UserManagement\\UserControl1.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAAAJoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T05:15:07.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserControl1.cs [Design]",
+              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\UserControl1.cs",
+              "RelativeDocumentMoniker": "UserManagement\\UserControl1.cs",
+              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\UserControl1.cs [Design]",
+              "RelativeToolTip": "UserManagement\\UserControl1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T05:04:59.441Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Form1.cs",
               "RelativeDocumentMoniker": "UserManagement\\Form1.cs",
@@ -104,19 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Connect.dbml",
-              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Connect.dbml",
-              "RelativeDocumentMoniker": "UserManagement\\Connect.dbml",
-              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Connect.dbml*",
-              "RelativeToolTip": "UserManagement\\Connect.dbml*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
-              "WhenOpened": "2025-09-19T05:39:59.449Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "SalaryDetailForUser.cs",
               "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\View\\Salary\\SalaryDetailForUser.cs",
               "RelativeDocumentMoniker": "UserManagement\\View\\Salary\\SalaryDetailForUser.cs",
@@ -129,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "AllowanceAndPenaltyEntity.cs",
               "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Entity\\AllowanceAndPenaltyEntity.cs",
               "RelativeDocumentMoniker": "UserManagement\\Entity\\AllowanceAndPenaltyEntity.cs",
@@ -142,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "CUDUser.cs",
               "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\View\\User\\CUDUser.cs",
               "RelativeDocumentMoniker": "UserManagement\\View\\User\\CUDUser.cs",
@@ -155,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "AttendenceEntity.cs",
               "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Entity\\AttendenceEntity.cs",
               "RelativeDocumentMoniker": "UserManagement\\Entity\\AttendenceEntity.cs",
@@ -168,7 +269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "SalaryDetailEntity.cs",
               "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Entity\\SalaryDetailEntity.cs",
               "RelativeDocumentMoniker": "UserManagement\\Entity\\SalaryDetailEntity.cs",
@@ -181,7 +282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "RoleDAO.cs",
               "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\DAO\\RoleDAO.cs",
               "RelativeDocumentMoniker": "UserManagement\\DAO\\RoleDAO.cs",

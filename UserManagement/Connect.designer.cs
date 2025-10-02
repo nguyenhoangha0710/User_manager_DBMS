@@ -337,6 +337,19 @@ namespace UserManagement
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fullName, dob, phone, email, hireDate, gender, address, jobRoleID, securityRoleName, username, password);
 			return ((ISingleResult<sp_CreateNew_EmployeeWithAccountResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_Login")]
+		public ISingleResult<sp_LoginResult> sp_Login([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string password)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password);
+			return ((ISingleResult<sp_LoginResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.fn_Login_Secure", IsComposable=true)]
+		public string fn_Login_Secure([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string password)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password).ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Account")]
@@ -4323,6 +4336,104 @@ namespace UserManagement
 				if ((this._NewUserID != value))
 				{
 					this._NewUserID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_LoginResult
+	{
+		
+		private int _user_id;
+		
+		private string _full_name;
+		
+		private string _JobTitle;
+		
+		private string _SecurityRole;
+		
+		private System.Nullable<bool> _AccountStatus;
+		
+		public sp_LoginResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_user_id", DbType="Int NOT NULL")]
+		public int user_id
+		{
+			get
+			{
+				return this._user_id;
+			}
+			set
+			{
+				if ((this._user_id != value))
+				{
+					this._user_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_full_name", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string full_name
+		{
+			get
+			{
+				return this._full_name;
+			}
+			set
+			{
+				if ((this._full_name != value))
+				{
+					this._full_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JobTitle", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string JobTitle
+		{
+			get
+			{
+				return this._JobTitle;
+			}
+			set
+			{
+				if ((this._JobTitle != value))
+				{
+					this._JobTitle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecurityRole", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string SecurityRole
+		{
+			get
+			{
+				return this._SecurityRole;
+			}
+			set
+			{
+				if ((this._SecurityRole != value))
+				{
+					this._SecurityRole = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountStatus", DbType="Bit")]
+		public System.Nullable<bool> AccountStatus
+		{
+			get
+			{
+				return this._AccountStatus;
+			}
+			set
+			{
+				if ((this._AccountStatus != value))
+				{
+					this._AccountStatus = value;
 				}
 			}
 		}
