@@ -1,4 +1,4 @@
-﻿namespace UserManagement
+namespace UserManagement
 {
     partial class Home
     {
@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2GradientButton4 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_CheckShift = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_SalaryManagement = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_AccountManagement = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_UserManagement = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkShift1 = new UserManagement.View.CheckShift();
             this.accountManagement1 = new UserManagement.View.Account.AccountManagement();
             this.salaryManagement1 = new UserManagement.SalaryManagement();
             this.userUS1 = new UserManagement.UserUS();
@@ -46,7 +47,7 @@
             // 
             // guna2CustomGradientPanel1
             // 
-            this.guna2CustomGradientPanel1.Controls.Add(this.guna2GradientButton4);
+            this.guna2CustomGradientPanel1.Controls.Add(this.btn_CheckShift);
             this.guna2CustomGradientPanel1.Controls.Add(this.btn_SalaryManagement);
             this.guna2CustomGradientPanel1.Controls.Add(this.btn_AccountManagement);
             this.guna2CustomGradientPanel1.Controls.Add(this.btn_UserManagement);
@@ -57,21 +58,22 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(240, 753);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
-            // guna2GradientButton4
+            // btn_CheckShift
             // 
-            this.guna2GradientButton4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton4.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2GradientButton4.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.Location = new System.Drawing.Point(5, 467);
-            this.guna2GradientButton4.Margin = new System.Windows.Forms.Padding(5);
-            this.guna2GradientButton4.Name = "guna2GradientButton4";
-            this.guna2GradientButton4.Size = new System.Drawing.Size(227, 73);
-            this.guna2GradientButton4.TabIndex = 3;
-            this.guna2GradientButton4.Text = "Quản lý nhân viên";
+            this.btn_CheckShift.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_CheckShift.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_CheckShift.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_CheckShift.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_CheckShift.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_CheckShift.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_CheckShift.ForeColor = System.Drawing.Color.White;
+            this.btn_CheckShift.Location = new System.Drawing.Point(5, 467);
+            this.btn_CheckShift.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_CheckShift.Name = "btn_CheckShift";
+            this.btn_CheckShift.Size = new System.Drawing.Size(227, 73);
+            this.btn_CheckShift.TabIndex = 3;
+            this.btn_CheckShift.Text = "Điểm danh ca làm";
+            this.btn_CheckShift.Click += new System.EventHandler(this.btn_CheckShift_Click);
             // 
             // btn_SalaryManagement
             // 
@@ -143,6 +145,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.checkShift1);
             this.panel2.Controls.Add(this.accountManagement1);
             this.panel2.Controls.Add(this.salaryManagement1);
             this.panel2.Controls.Add(this.userUS1);
@@ -151,6 +154,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1242, 693);
             this.panel2.TabIndex = 2;
+            // 
+            // checkShift1
+            // 
+            this.checkShift1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkShift1.Location = new System.Drawing.Point(0, 0);
+            this.checkShift1.Margin = new System.Windows.Forms.Padding(5);
+            this.checkShift1.Name = "checkShift1";
+            this.checkShift1.Size = new System.Drawing.Size(1242, 693);
+            this.checkShift1.TabIndex = 3;
             // 
             // accountManagement1
             // 
@@ -205,7 +217,7 @@
 
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2GradientButton btn_UserManagement;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton4;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_CheckShift;
         private Guna.UI2.WinForms.Guna2GradientButton btn_SalaryManagement;
         private Guna.UI2.WinForms.Guna2GradientButton btn_AccountManagement;
         private System.Windows.Forms.Panel panel1;
@@ -214,6 +226,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private SalaryManagement salaryManagement1;
         private View.Account.AccountManagement accountManagement1;
+        private View.CheckShift checkShift1;
     }
 }
 

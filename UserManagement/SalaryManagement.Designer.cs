@@ -1,4 +1,4 @@
-﻿namespace UserManagement
+namespace UserManagement
 {
     partial class SalaryManagement
     {
@@ -32,6 +32,7 @@
             this.DTP_MonthFilter = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btn_ReadAllSalary = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_UpdateSalary = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_payment = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.dvg_Salary)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,10 +98,28 @@
             this.btn_UpdateSalary.Text = "Cập nhật lương";
             this.btn_UpdateSalary.Click += new System.EventHandler(this.btn_UpdateSalary_Click);
             // 
+            // btn_payment
+            // 
+            this.btn_payment.BorderRadius = 20;
+            this.btn_payment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_payment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_payment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_payment.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_payment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_payment.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_payment.ForeColor = System.Drawing.Color.White;
+            this.btn_payment.Location = new System.Drawing.Point(682, 21);
+            this.btn_payment.Name = "btn_payment";
+            this.btn_payment.Size = new System.Drawing.Size(180, 50);
+            this.btn_payment.TabIndex = 4;
+            this.btn_payment.Text = "Thanh toán lương";
+            this.btn_payment.Click += new System.EventHandler(this.btn_payment_Click);
+            // 
             // SalaryManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_payment);
             this.Controls.Add(this.btn_UpdateSalary);
             this.Controls.Add(this.btn_ReadAllSalary);
             this.Controls.Add(this.DTP_MonthFilter);
@@ -119,5 +138,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker DTP_MonthFilter;
         private Guna.UI2.WinForms.Guna2GradientButton btn_ReadAllSalary;
         private Guna.UI2.WinForms.Guna2GradientButton btn_UpdateSalary;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_payment;
     }
 }

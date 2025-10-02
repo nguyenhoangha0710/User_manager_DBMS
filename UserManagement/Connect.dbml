@@ -92,6 +92,7 @@
       <Association Name="User_AllowanceAndPenalty" Member="AllowanceAndPenalties" ThisKey="user_id" OtherKey="user_id" Type="AllowanceAndPenalty" />
       <Association Name="User_Attendance" Member="Attendances" ThisKey="user_id" OtherKey="user_id" Type="Attendance" />
       <Association Name="User_Salary" Member="Salaries" ThisKey="user_id" OtherKey="user_id" Type="Salary" />
+      <Association Name="User_SalaryPayment" Member="SalaryPayments" ThisKey="user_id" OtherKey="user_id" Type="SalaryPayment" />
       <Association Name="Role_User" Member="Role" ThisKey="role_id" OtherKey="role_id" Type="Role" IsForeignKey="true" />
     </Type>
   </Table>
@@ -146,6 +147,18 @@
       <Column Name="email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="hire_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="role_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SalaryPayment" Member="SalaryPayments">
+    <Type Name="SalaryPayment">
+      <Column Name="payment_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="payment_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="payment_month" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="payment_year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="note" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="User_SalaryPayment" Member="User" ThisKey="user_id" OtherKey="user_id" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.SearchUser" Method="SearchUser">
@@ -207,11 +220,6 @@
     <Parameter Name="year" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_UpdateSalaryForAllUsers" Method="sp_UpdateSalaryForAllUsers">
-    <Parameter Name="month" Type="System.Int32" DbType="Int" />
-    <Parameter Name="year" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.fn_GetSalaryDetailForMonth" Method="fn_GetSalaryDetailForMonth" IsComposable="true">
     <Parameter Name="month" Type="System.Int32" DbType="Int" />
     <Parameter Name="year" Type="System.Int32" DbType="Int" />
@@ -269,6 +277,98 @@
       <Column Name="amount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
       <Column Name="reason" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="type" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_UserCheckIn" Method="sp_UserCheckIn">
+    <ElementType Name="sp_UserCheckInResult">
+      <Column Name="Message" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_UserCheckOut" Method="sp_UserCheckOut">
+    <ElementType Name="sp_UserCheckOutResult">
+      <Column Name="Message" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Time" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.fn_GetRemainingSalary" Method="fn_GetRemainingSalary" IsComposable="true">
+    <Parameter Name="target_user_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Decimal" />
+  </Function>
+  <Function Name="dbo.fn_GetTotalPaidAmount" Method="fn_GetTotalPaidAmount" IsComposable="true">
+    <Parameter Name="target_user_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Decimal" />
+  </Function>
+  <Function Name="dbo.fn_GetSalaryForPeriod" Method="fn_GetSalaryForPeriod" IsComposable="true">
+    <Parameter Name="target_user_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Decimal" />
+  </Function>
+  <Function Name="dbo.sp_ProcessPayment" Method="sp_ProcessPayment">
+    <Parameter Name="target_user_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="amount" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="payment_month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="payment_year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="note" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateSalaryForAllUsers" Method="sp_UpdateSalaryForAllUsers">
+    <Parameter Name="month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_PayAllEmployees" Method="sp_PayAllEmployees">
+    <Parameter Name="month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="note" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.fn_GetUserCountByRoleName" Method="fn_GetUserCountByRoleName" IsComposable="true">
+    <ElementType Name="fn_GetUserCountByRoleNameResult">
+      <Column Name="role_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NumberOfUsers" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.fn_SearchUser" Method="fn_SearchUser" IsComposable="true">
+    <Parameter Name="TypeSearch" Parameter="typeSearch" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ValueSearch" Parameter="valueSearch" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="fn_SearchUserResult">
+      <Column Name="user_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="full_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="dob" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="hire_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="role_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_CreateUserAccount" Method="sp_CreateUserAccount">
+    <Parameter Name="user_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="password" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="roleName" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CreateNew_EmployeeWithAccount" Method="sp_CreateNew_EmployeeWithAccount">
+    <Parameter Name="FullName" Parameter="fullName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="dob" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="phone" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="HireDate" Parameter="hireDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Gender" Parameter="gender" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="JobRoleID" Parameter="jobRoleID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SecurityRoleName" Parameter="securityRoleName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="sp_CreateNew_EmployeeWithAccountResult">
+      <Column Name="NewUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

@@ -3,57 +3,44 @@
   "WorkspaceRootPath": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\namth\\AppData\\Local\\Temp\\a3ftght4..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|d:\\nguyenhoangha_nam3\\hk1_d1\\dbms\\document\\project\\usermanagement\\usermanagement\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|d:\\nguyenhoangha_nam3\\hk1_d1\\dbms\\document\\project\\usermanagement\\usermanagement\\salarymanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\salarymanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\usermanagement\\view\\salary\\salarydetailforuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\view\\salary\\salarydetailforuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\usermanagement\\view\\salary\\salarydetailforuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\view\\salary\\salarydetailforuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\usermanagement\\dao\\salarydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\dao\\salarydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|d:\\nguyenhoangha_nam3\\hk1_d1\\dbms\\document\\project\\usermanagement\\usermanagement\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\usercontrol1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\usermanagement\\entity\\allowanceandpenaltyentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\entity\\allowanceandpenaltyentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|d:\\nguyenhoangha_nam3\\hk1_d1\\dbms\\document\\project\\usermanagement\\usermanagement\\view\\salary\\salarydetailforuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\view\\salary\\salarydetailforuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\usermanagement\\connect.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
       "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\connect.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|d:\\nguyenhoangha_nam3\\hk1_d1\\dbms\\document\\project\\usermanagement\\usermanagement\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\usermanagement\\view\\user\\cuduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\view\\user\\cuduser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\usermanagement\\entity\\attendenceentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\entity\\attendenceentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\usermanagement\\entity\\salarydetailentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\entity\\salarydetailentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\usermanagement\\dao\\roledao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\dao\\roledao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\usermanagement\\salarymanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:usermanagement\\salarymanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Entity\\AttendenceEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:UserManagement\\Entity\\AttendenceEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\namth\\AppData\\Local\\Temp\\a3ftght4..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\namth\\AppData\\Local\\Temp\\a3ftght4..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
+      "AbsoluteMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Entity\\SalaryDetailEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5554F858-DE82-454D-89A8-A71389BB84DB}|UserManagement\\UserManagement.csproj|solutionrelative:UserManagement\\Entity\\SalaryDetailEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -63,8 +50,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserControl1.cs",
+              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\UserControl1.cs",
+              "RelativeDocumentMoniker": "UserManagement\\UserControl1.cs",
+              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\UserControl1.cs",
+              "RelativeToolTip": "UserManagement\\UserControl1.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAAAJwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T05:15:07.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserControl1.cs [Design]",
+              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\UserControl1.cs",
+              "RelativeDocumentMoniker": "UserManagement\\UserControl1.cs",
+              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\UserControl1.cs [Design]",
+              "RelativeToolTip": "UserManagement\\UserControl1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T05:04:59.441Z",
+              "EditorCaption": " [Design]"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -79,12 +91,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SQLQuery1.sql ",
-              "DocumentMoniker": "C:\\Users\\namth\\AppData\\Local\\Temp\\a3ftght4..sql",
-              "ToolTip": "SQLQuery1.sql *",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-10-01T07:32:43.158Z",
+              "DocumentIndex": 5,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Form1.cs",
+              "RelativeDocumentMoniker": "UserManagement\\Form1.cs",
+              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Form1.cs",
+              "RelativeToolTip": "UserManagement\\Form1.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAmwCwAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T01:11:47.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Connect.dbml",
+              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Connect.dbml",
+              "RelativeDocumentMoniker": "UserManagement\\Connect.dbml",
+              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Connect.dbml*",
+              "RelativeToolTip": "UserManagement\\Connect.dbml*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
+              "WhenOpened": "2025-09-19T05:39:59.449Z",
               "EditorCaption": ""
             },
             {
@@ -95,63 +122,14 @@
               "RelativeDocumentMoniker": "UserManagement\\View\\Salary\\SalaryDetailForUser.cs",
               "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\View\\Salary\\SalaryDetailForUser.cs",
               "RelativeToolTip": "UserManagement\\View\\Salary\\SalaryDetailForUser.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAqwI8AAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAAALYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T07:03:32.007Z",
+              "WhenOpened": "2025-10-02T02:16:39.722Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "SalaryDetailForUser.cs [Design]",
-              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\View\\Salary\\SalaryDetailForUser.cs",
-              "RelativeDocumentMoniker": "UserManagement\\View\\Salary\\SalaryDetailForUser.cs",
-              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\View\\Salary\\SalaryDetailForUser.cs [Design]",
-              "RelativeToolTip": "UserManagement\\View\\Salary\\SalaryDetailForUser.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T06:56:18.802Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SalaryDAO.cs",
-              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\DAO\\SalaryDAO.cs",
-              "RelativeDocumentMoniker": "UserManagement\\DAO\\SalaryDAO.cs",
-              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\DAO\\SalaryDAO.cs",
-              "RelativeToolTip": "UserManagement\\DAO\\SalaryDAO.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAUwHYAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T07:52:26.783Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Connect.dbml",
-              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Connect.dbml",
-              "RelativeDocumentMoniker": "UserManagement\\Connect.dbml",
-              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Connect.dbml",
-              "RelativeToolTip": "UserManagement\\Connect.dbml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
-              "WhenOpened": "2025-09-19T05:39:59.449Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SalaryManagement.cs [Design]",
-              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\SalaryManagement.cs",
-              "RelativeDocumentMoniker": "UserManagement\\SalaryManagement.cs",
-              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\SalaryManagement.cs [Design]",
-              "RelativeToolTip": "UserManagement\\SalaryManagement.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T06:05:28.51Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "AllowanceAndPenaltyEntity.cs",
               "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\Entity\\AllowanceAndPenaltyEntity.cs",
               "RelativeDocumentMoniker": "UserManagement\\Entity\\AllowanceAndPenaltyEntity.cs",
@@ -164,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "CUDUser.cs",
               "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\View\\User\\CUDUser.cs",
               "RelativeDocumentMoniker": "UserManagement\\View\\User\\CUDUser.cs",
@@ -203,7 +181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "RoleDAO.cs",
               "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\DAO\\RoleDAO.cs",
               "RelativeDocumentMoniker": "UserManagement\\DAO\\RoleDAO.cs",
@@ -212,19 +190,6 @@
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwCoAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-25T07:12:24.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "SalaryManagement.cs",
-              "DocumentMoniker": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\SalaryManagement.cs",
-              "RelativeDocumentMoniker": "UserManagement\\SalaryManagement.cs",
-              "ToolTip": "D:\\NguyenHoangHa_nam3\\Hk1_D1\\DBMS\\Document\\Project\\UserManagement\\UserManagement\\SalaryManagement.cs",
-              "RelativeToolTip": "UserManagement\\SalaryManagement.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAA0wCYAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T08:03:56.777Z",
               "EditorCaption": ""
             }
           ]

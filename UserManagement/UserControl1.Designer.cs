@@ -1,4 +1,4 @@
-﻿namespace UserManagement
+namespace UserManagement
 {
     partial class UserUS
     {
@@ -36,6 +36,7 @@
             this.CB_TypeSearch = new Guna.UI2.WinForms.Guna2ComboBox();
             this.CB_RoleName = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btn_Refresh = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Users)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +69,7 @@
             this.txt_infoSearch.Name = "txt_infoSearch";
             this.txt_infoSearch.PlaceholderText = "";
             this.txt_infoSearch.SelectedText = "";
-            this.txt_infoSearch.Size = new System.Drawing.Size(233, 49);
+            this.txt_infoSearch.Size = new System.Drawing.Size(169, 49);
             this.txt_infoSearch.TabIndex = 4;
             // 
             // guna2ContextMenuStrip1
@@ -97,7 +98,7 @@
             this.btn_Search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_Search.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Search.ForeColor = System.Drawing.Color.White;
-            this.btn_Search.Location = new System.Drawing.Point(476, 22);
+            this.btn_Search.Location = new System.Drawing.Point(394, 22);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(144, 49);
             this.btn_Search.TabIndex = 6;
@@ -115,7 +116,7 @@
             this.btn_AddUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_AddUser.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_AddUser.ForeColor = System.Drawing.Color.White;
-            this.btn_AddUser.Location = new System.Drawing.Point(652, 22);
+            this.btn_AddUser.Location = new System.Drawing.Point(544, 22);
             this.btn_AddUser.Name = "btn_AddUser";
             this.btn_AddUser.Size = new System.Drawing.Size(144, 49);
             this.btn_AddUser.TabIndex = 7;
@@ -151,7 +152,7 @@
             this.CB_RoleName.ItemHeight = 30;
             this.CB_RoleName.Location = new System.Drawing.Point(219, 22);
             this.CB_RoleName.Name = "CB_RoleName";
-            this.CB_RoleName.Size = new System.Drawing.Size(233, 36);
+            this.CB_RoleName.Size = new System.Drawing.Size(169, 36);
             this.CB_RoleName.TabIndex = 9;
             this.CB_RoleName.SelectedIndexChanged += new System.EventHandler(this.CB_RoleName_SelectedIndexChanged);
             // 
@@ -166,17 +167,36 @@
             this.btn_Refresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_Refresh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(823, 22);
+            this.btn_Refresh.Location = new System.Drawing.Point(694, 22);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(144, 49);
             this.btn_Refresh.TabIndex = 10;
             this.btn_Refresh.Text = "Làm mới";
             this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.BorderRadius = 20;
+            this.guna2GradientButton1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.Location = new System.Drawing.Point(844, 22);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.Size = new System.Drawing.Size(144, 49);
+            this.guna2GradientButton1.TabIndex = 11;
+            this.guna2GradientButton1.Text = "Tổng quan";
+            this.guna2GradientButton1.Click += new System.EventHandler(this.btn_Overview_Click);
+            // 
             // UserUS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.guna2GradientButton1);
             this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.CB_RoleName);
             this.Controls.Add(this.CB_TypeSearch);
@@ -201,5 +221,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox CB_TypeSearch;
         private Guna.UI2.WinForms.Guna2ComboBox CB_RoleName;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Refresh;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
     }
 }

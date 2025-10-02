@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -131,6 +131,47 @@ namespace UserManagement.DAO
                     Type = x.type
                 }).ToList();
             return list;
+        }
+
+        /// <summary>
+        /// Lấy tổng lương (final_salary) của user trong tháng/năm
+        /// </summary>
+        public decimal GetSalaryForPeriod(int userId, int month, int year)
+        {
+            return conn.fn_GetSalaryForPeriod(userId, month, year) ?? 0;
+        }
+
+        /// <summary>
+        /// Lấy tổng số tiền đã trả cho user trong tháng/năm
+        /// </summary>
+        public decimal GetTotalPaidAmount(int userId, int month, int year)
+        {
+            return conn.fn_GetTotalPaidAmount(userId, month, year) ?? 0;
+        }
+
+        /// <summary>
+        /// Lấy số tiền còn lại cần trả cho user trong tháng/năm
+        /// </summary>
+        public decimal GetRemainingSalary(int userId, int month, int year)
+        {
+            return conn.fn_GetRemainingSalary(userId, month, year) ?? 0;
+        }
+
+        /// <summary>
+        /// Xử lý thanh toán lương cho nhân viên
+        /// </summary>
+        public void ProcessPayment(int userId, decimal amount, int month, int year, string note)
+        {
+            conn.sp_ProcessPayment(userId, amount, month, year, note);
+        }
+
+        /// <summary>
+        /// Thanh toán lương hàng loạt cho tất cả nhân viên trong tháng
+        /// Tự động cập nhật lương trước khi thanh toán
+        /// </summary>
+        public void PayAllEmployees(int month, int year, string note)
+        {
+            conn.sp_PayAllEmployees(month, year, note);
         }
 
     }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,12 +22,14 @@ namespace UserManagement.View.User
         {
             InitializeComponent();
             this.GetListRole();
+            this.LoadSecurityRoles();
             this.User_id = -1;
         }
         public CUDUser(int id)
         {
             InitializeComponent();
             this.GetListRole();
+            this.LoadSecurityRoles();
             this.User_id = id;
             LoadInfoUser();
         }
@@ -87,6 +89,11 @@ namespace UserManagement.View.User
             bool gender = Radio_Male.Checked; // true = Nam, false = Nữ
             string address = txt_address.Text.Trim();
 
+            // Thông tin tài khoản đăng nhập
+            string usernameAcc = txt_nameAccount.Text.Trim();
+            string passwordAcc = txt_password.Text.Trim();
+            string securityRoleName = guna2ComboBox1.SelectedItem != null ? guna2ComboBox1.SelectedItem.ToString() : null;
+
             // set du lieu vao entity
 
             // set dữ liệu vào entity (UserDTO)
@@ -108,12 +115,20 @@ namespace UserManagement.View.User
             {
                 if(user.user_id == null || user.user_id ==-1)
                 {
-                    UserDAO.Instance.InsertUser(user);
+                    // Validate tối thiểu cho tạo mới tài khoản
+                    if (string.IsNullOrWhiteSpace(usernameAcc) || string.IsNullOrWhiteSpace(passwordAcc) || string.IsNullOrWhiteSpace(securityRoleName))
+                    {
+                        MessageBox.Show("Vui lòng nhập Username, Password và chọn Role (QuanLy/NhanVien) cho tài khoản.", "Thiếu thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    UserDAO.Instance.InsertUser(user, usernameAcc, passwordAcc, securityRoleName);
                     MessageBox.Show("Thêm nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    UserDAO.Instance.InsertUser(user);
+                    // Cập nhật nhân viên: vẫn dùng cùng method, SP sẽ đi nhánh update và bỏ qua thông tin account
+                    UserDAO.Instance.InsertUser(user, usernameAcc, passwordAcc, securityRoleName);
                     MessageBox.Show("Cập nhật nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
    
@@ -137,6 +152,25 @@ namespace UserManagement.View.User
             cb_Role.DataSource = roles;
             cb_Role.DisplayMember = "role_name";
             cb_Role.ValueMember = "role_id";
+        }
+        public void GetListRoleAccount()
+        {
+            var roles = RoleDAO.Instance.GetListRole();
+            cb_Role.DataSource = roles;
+            cb_Role.DisplayMember = "role_name";
+            cb_Role.ValueMember = "role_id";
+        }
+
+        private void LoadSecurityRoles()
+        {
+            // Role phân quyền cho tài khoản đăng nhập (database role)
+            guna2ComboBox1.Items.Clear();
+            guna2ComboBox1.Items.AddRange(new object[] { "QuanLy", "NhanVien" });
+            if (guna2ComboBox1.Items.Count > 0)
+            {
+                // Mặc định chọn NhanVien
+                guna2ComboBox1.SelectedIndex = 1;
+            }
         }
 
 
@@ -182,6 +216,11 @@ namespace UserManagement.View.User
                     MessageBox.Show(ex.Message, "Lỗi hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void CUDUser_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

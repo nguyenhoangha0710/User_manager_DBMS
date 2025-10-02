@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -74,14 +74,14 @@ namespace UserManagement.DTO
         {
             using (var conn = new ConnectDataContext())
             {
-                var result = conn.SearchUser(key, value);
+                var result = conn.fn_SearchUser(key, value);
                 return result.
                     Select(v => new UserWithRole
                     {
-                        user_id = v.user_id,
+                        user_id = v.user_id.GetValueOrDefault(),
                         full_name = v.full_name,
                         dob = v.dob,
-                        Gender = v.Gender,
+                        Gender = v.Gender.GetValueOrDefault(),
                         email = v.email,
                         phone = v.phone,
                         hire_date = v.hire_date,
@@ -92,21 +92,28 @@ namespace UserManagement.DTO
 
 
         // viet ham them user 
-        public void InsertUser(UserEntity user)
+        public void InsertUser(UserEntity user, string username, string password, string securityRoleName)
         {
             using (var conn = new ConnectDataContext())
             {
                 if (user.user_id == null || user.user_id == -1)
                 {
-                    conn.sp_AddUserManagement(
-                    user.full_name,
-                    user.dob,
-                    user.phone,
-                    user.email,
-                    user.Role_id,
-                    user.hire_date,
-                    user.Gender,
-                    user.address);
+                    // sp_CreateNew_EmployeeWithAccount parameter order:
+                    // @FullName, @dob, @phone, @Email, @HireDate, @Gender, @Address,
+                    // @JobRoleID, @SecurityRoleName, @Username, @Password
+                    conn.sp_CreateNew_EmployeeWithAccount(
+                        user.full_name,
+                        user.dob,
+                        user.phone,
+                        user.email,
+                        user.hire_date,
+                        user.Gender,
+                        user.address,
+                        user.Role_id,
+                        securityRoleName,
+                        username,
+                        password
+                    );
                 }
                 else
                 {
@@ -161,5 +168,28 @@ namespace UserManagement.DTO
             }
         }
 
+        /// <summary>
+        /// Lấy tổng quan số lượng nhân viên theo chức vụ
+        /// </summary>
+        public List<UserCountByRole> GetUserCountByRoleName()
+        {
+            using (var conn = new ConnectDataContext())
+            {
+                var result = conn.fn_GetUserCountByRoleName();
+                return result.Select(x => new UserCountByRole
+                {
+                    role_name = x.role_name,
+                    NumberOfUsers = x.NumberOfUsers ?? 0
+                }).ToList();
+            }
+        }
+
     }
+}
+
+// Class để chứa kết quả tổng quan
+public class UserCountByRole
+{
+    public string role_name { get; set; }
+    public int NumberOfUsers { get; set; }
 }

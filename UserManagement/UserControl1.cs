@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -145,6 +145,21 @@ namespace UserManagement
             CB_RoleName.Hide();
         }
 
+        private void btn_Overview_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy tổng quan số lượng nhân viên theo chức vụ
+                var overview = UserDAO.Instance.GetUserCountByRoleName();
+                
+                // Hiển thị lên DataGridView
+                this.dgv_Users.DataSource = overview;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
     }
 }

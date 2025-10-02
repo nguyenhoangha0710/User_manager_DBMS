@@ -15,3 +15,5 @@ D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement
 D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.View.Account.AccountManagement.resources
 D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.View.Salary.SalaryDetailForUser.resources
 D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.View.User.CUDUser.resources
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.View.CheckShift.resources
+D:\NguyenHoangHa_nam3\Hk1_D1\DBMS\Document\Project\UserManagement\UserManagement\obj\Debug\UserManagement.View.Login.LoginForm.resources

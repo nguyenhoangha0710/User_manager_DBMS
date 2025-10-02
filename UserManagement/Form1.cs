@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,12 +15,15 @@ namespace UserManagement
         public Home()
         {
             InitializeComponent();
+
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
-            //this.okok1.Show();
-
+            this.userUS1.Show();
+            this.salaryManagement1.Hide();
+            this.accountManagement1.Hide();
+            this.checkShift1.Hide();
         }
 
         private void guna2GradientButton3_Click(object sender, EventArgs e)
@@ -28,6 +31,7 @@ namespace UserManagement
             this.salaryManagement1.Show();
             this.userUS1.Hide();
             this.accountManagement1.Hide();
+            this.checkShift1.Hide();
         }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
@@ -35,6 +39,7 @@ namespace UserManagement
             this.userUS1.Show();
             this.salaryManagement1.Hide();
             this.accountManagement1.Hide();
+            this.checkShift1.Hide();
         }
 
         private void btn_AccountManagement_Click(object sender, EventArgs e)
@@ -42,7 +47,15 @@ namespace UserManagement
             this.accountManagement1.Show();
             this.userUS1.Hide();
             this.salaryManagement1.Hide();
+            this.checkShift1.Hide();
+        }
 
+        private void btn_CheckShift_Click(object sender, EventArgs e)
+        {
+            this.checkShift1.Show();
+            this.userUS1.Hide();
+            this.salaryManagement1.Hide();
+            this.accountManagement1.Hide();
         }
     }
 }

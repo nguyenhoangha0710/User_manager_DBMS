@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -101,6 +101,51 @@ namespace UserManagement
                 MessageBox.Show(ex.Message, "Lỗi hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
            
+        }
+
+        private void btn_payment_Click(object sender, EventArgs e)
+        {
+            int month = DTP_MonthFilter.Value.Month;
+            int year = DTP_MonthFilter.Value.Year;
+
+            try
+            {
+                // Xác nhận thanh toán
+                DialogResult result = MessageBox.Show(
+                    $"Bạn có chắc chắn muốn thanh toán lương hàng loạt cho tất cả nhân viên?\n\n" +
+                    $"Tháng: {month}/{year}\n\n" +
+                    $"Lưu ý: Hệ thống sẽ tự động:\n" +
+                    $"1. Cập nhật lương cho tất cả nhân viên\n" +
+                    $"2. Thanh toán số tiền còn lại cho từng nhân viên",
+                    "Xác nhận thanh toán hàng loạt",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    string note = $"Thanh toán lương cuối kỳ tháng {month}/{year}";
+                    SalaryDAO.Instance.PayAllEmployees(month, year, note);
+
+                    MessageBox.Show(
+                        "Thanh toán lương hàng loạt thành công!\n\nĐã thanh toán cho tất cả nhân viên có số dư còn lại.",
+                        "Thành công",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+
+                    // Cập nhật lại danh sách lương
+                    this.dvg_Salary.DataSource = SalaryDAO.Instance.GetSalaryDetailForMonth(month, year);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi từ cơ sở dữ liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

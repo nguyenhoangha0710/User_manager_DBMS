@@ -54,6 +54,9 @@ namespace UserManagement
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
+    partial void InsertSalaryPayment(SalaryPayment instance);
+    partial void UpdateSalaryPayment(SalaryPayment instance);
+    partial void DeleteSalaryPayment(SalaryPayment instance);
     #endregion
 		
 		public ConnectDataContext() : 
@@ -182,6 +185,14 @@ namespace UserManagement
 			}
 		}
 		
+		public System.Data.Linq.Table<SalaryPayment> SalaryPayments
+		{
+			get
+			{
+				return this.GetTable<SalaryPayment>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SearchUser")]
 		public ISingleResult<SearchUserResult> SearchUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TypeSearch", DbType="NVarChar(50)")] string typeSearch, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ValueSearch", DbType="NVarChar(100)")] string valueSearch)
 		{
@@ -224,13 +235,6 @@ namespace UserManagement
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateSalaryForAllUsers")]
-		public int sp_UpdateSalaryForAllUsers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> month, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> year)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), month, year);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.fn_GetSalaryDetailForMonth", IsComposable=true)]
 		public IQueryable<fn_GetSalaryDetailForMonthResult> fn_GetSalaryDetailForMonth([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> month, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> year)
 		{
@@ -253,6 +257,85 @@ namespace UserManagement
 		public IQueryable<fn_GetPenaltyByUserForMonthResult> fn_GetPenaltyByUserForMonth([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserId", DbType="Int")] System.Nullable<int> userId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Month", DbType="Int")] System.Nullable<int> month, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Year", DbType="Int")] System.Nullable<int> year)
 		{
 			return this.CreateMethodCallQuery<fn_GetPenaltyByUserForMonthResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userId, month, year);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UserCheckIn")]
+		public ISingleResult<sp_UserCheckInResult> sp_UserCheckIn()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_UserCheckInResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UserCheckOut")]
+		public ISingleResult<sp_UserCheckOutResult> sp_UserCheckOut()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<sp_UserCheckOutResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.fn_GetRemainingSalary", IsComposable=true)]
+		public System.Nullable<decimal> fn_GetRemainingSalary([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> target_user_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> month, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> year)
+		{
+			return ((System.Nullable<decimal>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), target_user_id, month, year).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.fn_GetTotalPaidAmount", IsComposable=true)]
+		public System.Nullable<decimal> fn_GetTotalPaidAmount([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> target_user_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> month, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> year)
+		{
+			return ((System.Nullable<decimal>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), target_user_id, month, year).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.fn_GetSalaryForPeriod", IsComposable=true)]
+		public System.Nullable<decimal> fn_GetSalaryForPeriod([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> target_user_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> month, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> year)
+		{
+			return ((System.Nullable<decimal>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), target_user_id, month, year).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ProcessPayment")]
+		public int sp_ProcessPayment([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> target_user_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(18,2)")] System.Nullable<decimal> amount, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> payment_month, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> payment_year, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string note)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), target_user_id, amount, payment_month, payment_year, note);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateSalaryForAllUsers")]
+		public int sp_UpdateSalaryForAllUsers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> month, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> year)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), month, year);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_PayAllEmployees")]
+		public int sp_PayAllEmployees([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> month, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> year, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(255)")] string note)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), month, year, note);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.fn_GetUserCountByRoleName", IsComposable=true)]
+		public IQueryable<fn_GetUserCountByRoleNameResult> fn_GetUserCountByRoleName()
+		{
+			return this.CreateMethodCallQuery<fn_GetUserCountByRoleNameResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.fn_SearchUser", IsComposable=true)]
+		public IQueryable<fn_SearchUserResult> fn_SearchUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TypeSearch", DbType="NVarChar(50)")] string typeSearch, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ValueSearch", DbType="NVarChar(100)")] string valueSearch)
+		{
+			return this.CreateMethodCallQuery<fn_SearchUserResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), typeSearch, valueSearch);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CreateUserAccount")]
+		public int sp_CreateUserAccount([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> user_id, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string roleName)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), user_id, username, password, roleName);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_CreateNew_EmployeeWithAccount")]
+		public ISingleResult<sp_CreateNew_EmployeeWithAccountResult> sp_CreateNew_EmployeeWithAccount([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FullName", DbType="NVarChar(100)")] string fullName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> dob, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string phone, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="NVarChar(100)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="HireDate", DbType="Date")] System.Nullable<System.DateTime> hireDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Gender", DbType="Bit")] System.Nullable<bool> gender, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address", DbType="NVarChar(200)")] string address, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="JobRoleID", DbType="Int")] System.Nullable<int> jobRoleID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SecurityRoleName", DbType="NVarChar(100)")] string securityRoleName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Username", DbType="NVarChar(100)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="NVarChar(100)")] string password)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fullName, dob, phone, email, hireDate, gender, address, jobRoleID, securityRoleName, username, password);
+			return ((ISingleResult<sp_CreateNew_EmployeeWithAccountResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1801,6 +1884,8 @@ namespace UserManagement
 		
 		private EntitySet<Salary> _Salaries;
 		
+		private EntitySet<SalaryPayment> _SalaryPayments;
+		
 		private EntityRef<Role> _Role;
 		
     #region Extensibility Method Definitions
@@ -1835,6 +1920,7 @@ namespace UserManagement
 			this._AllowanceAndPenalties = new EntitySet<AllowanceAndPenalty>(new Action<AllowanceAndPenalty>(this.attach_AllowanceAndPenalties), new Action<AllowanceAndPenalty>(this.detach_AllowanceAndPenalties));
 			this._Attendances = new EntitySet<Attendance>(new Action<Attendance>(this.attach_Attendances), new Action<Attendance>(this.detach_Attendances));
 			this._Salaries = new EntitySet<Salary>(new Action<Salary>(this.attach_Salaries), new Action<Salary>(this.detach_Salaries));
+			this._SalaryPayments = new EntitySet<SalaryPayment>(new Action<SalaryPayment>(this.attach_SalaryPayments), new Action<SalaryPayment>(this.detach_SalaryPayments));
 			this._Role = default(EntityRef<Role>);
 			OnCreated();
 		}
@@ -2095,6 +2181,19 @@ namespace UserManagement
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_SalaryPayment", Storage="_SalaryPayments", ThisKey="user_id", OtherKey="user_id")]
+		public EntitySet<SalaryPayment> SalaryPayments
+		{
+			get
+			{
+				return this._SalaryPayments;
+			}
+			set
+			{
+				this._SalaryPayments.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Role_User", Storage="_Role", ThisKey="role_id", OtherKey="role_id", IsForeignKey=true)]
 		public Role Role
 		{
@@ -2192,6 +2291,18 @@ namespace UserManagement
 		}
 		
 		private void detach_Salaries(Salary entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_SalaryPayments(SalaryPayment entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_SalaryPayments(SalaryPayment entity)
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
@@ -2896,6 +3007,253 @@ namespace UserManagement
 				{
 					this._role_name = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SalaryPayment")]
+	public partial class SalaryPayment : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _payment_id;
+		
+		private int _user_id;
+		
+		private System.DateTime _payment_date;
+		
+		private decimal _amount;
+		
+		private int _payment_month;
+		
+		private int _payment_year;
+		
+		private string _note;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onpayment_idChanging(int value);
+    partial void Onpayment_idChanged();
+    partial void Onuser_idChanging(int value);
+    partial void Onuser_idChanged();
+    partial void Onpayment_dateChanging(System.DateTime value);
+    partial void Onpayment_dateChanged();
+    partial void OnamountChanging(decimal value);
+    partial void OnamountChanged();
+    partial void Onpayment_monthChanging(int value);
+    partial void Onpayment_monthChanged();
+    partial void Onpayment_yearChanging(int value);
+    partial void Onpayment_yearChanged();
+    partial void OnnoteChanging(string value);
+    partial void OnnoteChanged();
+    #endregion
+		
+		public SalaryPayment()
+		{
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payment_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int payment_id
+		{
+			get
+			{
+				return this._payment_id;
+			}
+			set
+			{
+				if ((this._payment_id != value))
+				{
+					this.Onpayment_idChanging(value);
+					this.SendPropertyChanging();
+					this._payment_id = value;
+					this.SendPropertyChanged("payment_id");
+					this.Onpayment_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_user_id", DbType="Int NOT NULL")]
+		public int user_id
+		{
+			get
+			{
+				return this._user_id;
+			}
+			set
+			{
+				if ((this._user_id != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onuser_idChanging(value);
+					this.SendPropertyChanging();
+					this._user_id = value;
+					this.SendPropertyChanged("user_id");
+					this.Onuser_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payment_date", DbType="DateTime NOT NULL")]
+		public System.DateTime payment_date
+		{
+			get
+			{
+				return this._payment_date;
+			}
+			set
+			{
+				if ((this._payment_date != value))
+				{
+					this.Onpayment_dateChanging(value);
+					this.SendPropertyChanging();
+					this._payment_date = value;
+					this.SendPropertyChanged("payment_date");
+					this.Onpayment_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amount", DbType="Decimal(18,2) NOT NULL")]
+		public decimal amount
+		{
+			get
+			{
+				return this._amount;
+			}
+			set
+			{
+				if ((this._amount != value))
+				{
+					this.OnamountChanging(value);
+					this.SendPropertyChanging();
+					this._amount = value;
+					this.SendPropertyChanged("amount");
+					this.OnamountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payment_month", DbType="Int NOT NULL")]
+		public int payment_month
+		{
+			get
+			{
+				return this._payment_month;
+			}
+			set
+			{
+				if ((this._payment_month != value))
+				{
+					this.Onpayment_monthChanging(value);
+					this.SendPropertyChanging();
+					this._payment_month = value;
+					this.SendPropertyChanged("payment_month");
+					this.Onpayment_monthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payment_year", DbType="Int NOT NULL")]
+		public int payment_year
+		{
+			get
+			{
+				return this._payment_year;
+			}
+			set
+			{
+				if ((this._payment_year != value))
+				{
+					this.Onpayment_yearChanging(value);
+					this.SendPropertyChanging();
+					this._payment_year = value;
+					this.SendPropertyChanged("payment_year");
+					this.Onpayment_yearChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_note", DbType="NVarChar(255)")]
+		public string note
+		{
+			get
+			{
+				return this._note;
+			}
+			set
+			{
+				if ((this._note != value))
+				{
+					this.OnnoteChanging(value);
+					this.SendPropertyChanging();
+					this._note = value;
+					this.SendPropertyChanged("note");
+					this.OnnoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_SalaryPayment", Storage="_User", ThisKey="user_id", OtherKey="user_id", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.SalaryPayments.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.SalaryPayments.Add(this);
+						this._user_id = value.user_id;
+					}
+					else
+					{
+						this._user_id = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -3655,6 +4013,316 @@ namespace UserManagement
 				if ((this._type != value))
 				{
 					this._type = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_UserCheckInResult
+	{
+		
+		private string _Message;
+		
+		private System.DateTime _Time;
+		
+		public sp_UserCheckInResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Message", DbType="VarChar(19) NOT NULL", CanBeNull=false)]
+		public string Message
+		{
+			get
+			{
+				return this._Message;
+			}
+			set
+			{
+				if ((this._Message != value))
+				{
+					this._Message = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Time", DbType="DateTime NOT NULL")]
+		public System.DateTime Time
+		{
+			get
+			{
+				return this._Time;
+			}
+			set
+			{
+				if ((this._Time != value))
+				{
+					this._Time = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_UserCheckOutResult
+	{
+		
+		private string _Message;
+		
+		private System.DateTime _Time;
+		
+		public sp_UserCheckOutResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Message", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Message
+		{
+			get
+			{
+				return this._Message;
+			}
+			set
+			{
+				if ((this._Message != value))
+				{
+					this._Message = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Time", DbType="DateTime NOT NULL")]
+		public System.DateTime Time
+		{
+			get
+			{
+				return this._Time;
+			}
+			set
+			{
+				if ((this._Time != value))
+				{
+					this._Time = value;
+				}
+			}
+		}
+	}
+	
+	public partial class fn_GetUserCountByRoleNameResult
+	{
+		
+		private string _role_name;
+		
+		private System.Nullable<int> _NumberOfUsers;
+		
+		public fn_GetUserCountByRoleNameResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_role_name", DbType="NVarChar(100)")]
+		public string role_name
+		{
+			get
+			{
+				return this._role_name;
+			}
+			set
+			{
+				if ((this._role_name != value))
+				{
+					this._role_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberOfUsers", DbType="Int")]
+		public System.Nullable<int> NumberOfUsers
+		{
+			get
+			{
+				return this._NumberOfUsers;
+			}
+			set
+			{
+				if ((this._NumberOfUsers != value))
+				{
+					this._NumberOfUsers = value;
+				}
+			}
+		}
+	}
+	
+	public partial class fn_SearchUserResult
+	{
+		
+		private System.Nullable<int> _user_id;
+		
+		private string _full_name;
+		
+		private System.Nullable<System.DateTime> _dob;
+		
+		private System.Nullable<bool> _Gender;
+		
+		private string _email;
+		
+		private string _phone;
+		
+		private System.Nullable<System.DateTime> _hire_date;
+		
+		private string _role_name;
+		
+		public fn_SearchUserResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_user_id", DbType="Int")]
+		public System.Nullable<int> user_id
+		{
+			get
+			{
+				return this._user_id;
+			}
+			set
+			{
+				if ((this._user_id != value))
+				{
+					this._user_id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_full_name", DbType="NVarChar(100)")]
+		public string full_name
+		{
+			get
+			{
+				return this._full_name;
+			}
+			set
+			{
+				if ((this._full_name != value))
+				{
+					this._full_name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dob", DbType="Date")]
+		public System.Nullable<System.DateTime> dob
+		{
+			get
+			{
+				return this._dob;
+			}
+			set
+			{
+				if ((this._dob != value))
+				{
+					this._dob = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="Bit")]
+		public System.Nullable<bool> Gender
+		{
+			get
+			{
+				return this._Gender;
+			}
+			set
+			{
+				if ((this._Gender != value))
+				{
+					this._Gender = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(100)")]
+		public string email
+		{
+			get
+			{
+				return this._email;
+			}
+			set
+			{
+				if ((this._email != value))
+				{
+					this._email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="NVarChar(20)")]
+		public string phone
+		{
+			get
+			{
+				return this._phone;
+			}
+			set
+			{
+				if ((this._phone != value))
+				{
+					this._phone = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hire_date", DbType="Date")]
+		public System.Nullable<System.DateTime> hire_date
+		{
+			get
+			{
+				return this._hire_date;
+			}
+			set
+			{
+				if ((this._hire_date != value))
+				{
+					this._hire_date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_role_name", DbType="NVarChar(100)")]
+		public string role_name
+		{
+			get
+			{
+				return this._role_name;
+			}
+			set
+			{
+				if ((this._role_name != value))
+				{
+					this._role_name = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_CreateNew_EmployeeWithAccountResult
+	{
+		
+		private System.Nullable<int> _NewUserID;
+		
+		public sp_CreateNew_EmployeeWithAccountResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewUserID", DbType="Int")]
+		public System.Nullable<int> NewUserID
+		{
+			get
+			{
+				return this._NewUserID;
+			}
+			set
+			{
+				if ((this._NewUserID != value))
+				{
+					this._NewUserID = value;
 				}
 			}
 		}
