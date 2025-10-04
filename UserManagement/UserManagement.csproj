@@ -65,6 +65,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Connect.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DAO\AllowanceAndPenaltyDAO.cs" />
     <Compile Include="DAO\AttendanceDAO.cs" />
     <Compile Include="DAO\RoleDAO.cs" />
     <Compile Include="DAO\SalaryDAO.cs" />
@@ -114,6 +115,18 @@
     <Compile Include="View\Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Salary\AddBonusAndPen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Salary\AddBonusAndPen.Designer.cs">
+      <DependentUpon>AddBonusAndPen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Salary\BonusPenDetailForUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Salary\BonusPenDetailForUsers.Designer.cs">
+      <DependentUpon>BonusPenDetailForUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Salary\SalaryDetailForUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +165,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Salary\AddBonusAndPen.resx">
+      <DependentUpon>AddBonusAndPen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Salary\BonusPenDetailForUsers.resx">
+      <DependentUpon>BonusPenDetailForUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Salary\SalaryDetailForUser.resx">
       <DependentUpon>SalaryDetailForUser.cs</DependentUpon>

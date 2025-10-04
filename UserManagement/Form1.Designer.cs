@@ -34,19 +34,19 @@ namespace UserManagement
             this.btn_AccountManagement = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_UserManagement = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkShift1 = new UserManagement.View.CheckShift();
             this.accountManagement1 = new UserManagement.View.Account.AccountManagement();
             this.salaryManagement1 = new UserManagement.SalaryManagement();
             this.userUS1 = new UserManagement.UserUS();
+            this.btn_BonusOrPen = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2CustomGradientPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
             // 
+            this.guna2CustomGradientPanel1.Controls.Add(this.btn_BonusOrPen);
             this.guna2CustomGradientPanel1.Controls.Add(this.btn_CheckShift);
             this.guna2CustomGradientPanel1.Controls.Add(this.btn_SalaryManagement);
             this.guna2CustomGradientPanel1.Controls.Add(this.btn_AccountManagement);
@@ -67,7 +67,7 @@ namespace UserManagement
             this.btn_CheckShift.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_CheckShift.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_CheckShift.ForeColor = System.Drawing.Color.White;
-            this.btn_CheckShift.Location = new System.Drawing.Point(5, 467);
+            this.btn_CheckShift.Location = new System.Drawing.Point(8, 383);
             this.btn_CheckShift.Margin = new System.Windows.Forms.Padding(5);
             this.btn_CheckShift.Name = "btn_CheckShift";
             this.btn_CheckShift.Size = new System.Drawing.Size(227, 73);
@@ -84,7 +84,7 @@ namespace UserManagement
             this.btn_SalaryManagement.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_SalaryManagement.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_SalaryManagement.ForeColor = System.Drawing.Color.White;
-            this.btn_SalaryManagement.Location = new System.Drawing.Point(5, 269);
+            this.btn_SalaryManagement.Location = new System.Drawing.Point(8, 190);
             this.btn_SalaryManagement.Margin = new System.Windows.Forms.Padding(5);
             this.btn_SalaryManagement.Name = "btn_SalaryManagement";
             this.btn_SalaryManagement.Size = new System.Drawing.Size(227, 73);
@@ -101,12 +101,12 @@ namespace UserManagement
             this.btn_AccountManagement.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_AccountManagement.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_AccountManagement.ForeColor = System.Drawing.Color.White;
-            this.btn_AccountManagement.Location = new System.Drawing.Point(5, 368);
+            this.btn_AccountManagement.Location = new System.Drawing.Point(5, 639);
             this.btn_AccountManagement.Margin = new System.Windows.Forms.Padding(5);
             this.btn_AccountManagement.Name = "btn_AccountManagement";
             this.btn_AccountManagement.Size = new System.Drawing.Size(227, 73);
             this.btn_AccountManagement.TabIndex = 1;
-            this.btn_AccountManagement.Text = "Quản lý tái khoản";
+            this.btn_AccountManagement.Text = "Đăng xuất:";
             this.btn_AccountManagement.Click += new System.EventHandler(this.btn_AccountManagement_Click);
             // 
             // btn_UserManagement
@@ -118,7 +118,7 @@ namespace UserManagement
             this.btn_UserManagement.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_UserManagement.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_UserManagement.ForeColor = System.Drawing.Color.White;
-            this.btn_UserManagement.Location = new System.Drawing.Point(5, 170);
+            this.btn_UserManagement.Location = new System.Drawing.Point(8, 91);
             this.btn_UserManagement.Margin = new System.Windows.Forms.Padding(5);
             this.btn_UserManagement.Name = "btn_UserManagement";
             this.btn_UserManagement.Size = new System.Drawing.Size(227, 73);
@@ -128,20 +128,11 @@ namespace UserManagement
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(240, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1242, 60);
             this.panel1.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(205, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 34);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "hoangha ";
             // 
             // panel2
             // 
@@ -191,6 +182,23 @@ namespace UserManagement
             this.userUS1.Size = new System.Drawing.Size(1242, 693);
             this.userUS1.TabIndex = 0;
             // 
+            // btn_BonusOrPen
+            // 
+            this.btn_BonusOrPen.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_BonusOrPen.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_BonusOrPen.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_BonusOrPen.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_BonusOrPen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_BonusOrPen.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_BonusOrPen.ForeColor = System.Drawing.Color.White;
+            this.btn_BonusOrPen.Location = new System.Drawing.Point(8, 287);
+            this.btn_BonusOrPen.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_BonusOrPen.Name = "btn_BonusOrPen";
+            this.btn_BonusOrPen.Size = new System.Drawing.Size(227, 73);
+            this.btn_BonusOrPen.TabIndex = 4;
+            this.btn_BonusOrPen.Text = "Cập nhật lương Thưởng/Phạt";
+            this.btn_BonusOrPen.Click += new System.EventHandler(this.btn_BonusOrPen_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
@@ -206,8 +214,6 @@ namespace UserManagement
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Home_Load);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -223,10 +229,10 @@ namespace UserManagement
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private UserUS userUS1;
-        private System.Windows.Forms.TextBox textBox1;
         private SalaryManagement salaryManagement1;
         private View.Account.AccountManagement accountManagement1;
         private View.CheckShift checkShift1;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_BonusOrPen;
     }
 }
 

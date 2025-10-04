@@ -387,4 +387,32 @@
     <Parameter Name="password" Type="System.String" DbType="NVarChar(100)" />
     <Return Type="System.String" />
   </Function>
+  <Function Name="dbo.fn_TotalHoursWorked" Method="fn_TotalHoursWorked" IsComposable="true">
+    <Parameter Name="user_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Decimal" />
+  </Function>
+  <Function Name="dbo.sp_InsertAllowanceAndPenalty" Method="sp_InsertAllowanceAndPenalty">
+    <Parameter Name="user_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="amount" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="type" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="reason" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateAllowanceAndPenalty" Method="sp_UpdateAllowanceAndPenalty">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="month" Type="System.Int32" DbType="Int" />
+    <Parameter Name="year" Type="System.Int32" DbType="Int" />
+    <Parameter Name="amount" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="type" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="reason" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_DeleteAllowanceAndPenalty" Method="sp_DeleteAllowanceAndPenalty">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

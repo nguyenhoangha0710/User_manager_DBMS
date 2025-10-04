@@ -64,9 +64,18 @@ namespace UserManagement
                 if (result == DialogResult.Yes)
                 {
 
-                    SalaryDAO.Instance.UpdateSalaryForAllUsers(month, year);
-                    MessageBox.Show("Cập nhật lương thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    bool success = SalaryDAO.Instance.UpdateSalaryForAllUsers(month, year);
+                    if (!success)
+                    {
+                        MessageBox.Show("Cập nhật lương thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật lương thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
+                   
             }
             catch (SqlException ex)
             {
@@ -125,8 +134,18 @@ namespace UserManagement
                 if (result == DialogResult.Yes)
                 {
                     string note = $"Thanh toán lương cuối kỳ tháng {month}/{year}";
-                    SalaryDAO.Instance.PayAllEmployees(month, year, note);
+                    bool succes =  SalaryDAO.Instance.PayAllEmployees(month, year, note);
 
+                    if (!succes)
+                    {
+                        MessageBox.Show(
+                            "Thanh toán lương hàng loạt thất bại!\n\nCó thể do chưa cập nhật lương cho tháng này.",
+                            "Lỗi",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        );
+                        return;
+                    }
                     MessageBox.Show(
                         "Thanh toán lương hàng loạt thành công!\n\nĐã thanh toán cho tất cả nhân viên có số dư còn lại.",
                         "Thành công",

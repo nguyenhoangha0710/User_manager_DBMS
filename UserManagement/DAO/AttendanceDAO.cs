@@ -24,6 +24,13 @@ namespace UserManagement.DAO
             private set { instance = value; }
         }
 
+
+        private ConnectDataContext GetContext()
+        {
+            // Luôn tạo mới DataContext với chuỗi kết nối của người dùng đang đăng nhập
+            return new ConnectDataContext(UserSession.MainConnectionString);
+        }
+
         private AttendanceDAO() { }
 
         /// <summary>
@@ -34,7 +41,7 @@ namespace UserManagement.DAO
         {
             try
             {
-                using (ConnectDataContext conn = new ConnectDataContext())
+                using (ConnectDataContext conn = GetContext())
                 {
                     var result = conn.sp_UserCheckIn();
                     return "Check-in thành công!";
@@ -59,7 +66,7 @@ namespace UserManagement.DAO
         {
             try
             {
-                using (ConnectDataContext conn = new ConnectDataContext())
+                using (ConnectDataContext conn = GetContext())
                 {
                     var result = conn.sp_UserCheckOut();
                     return "Check-out thành công!";
